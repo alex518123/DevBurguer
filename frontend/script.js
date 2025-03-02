@@ -156,15 +156,7 @@ async function getWhatsAppNumber() {
     }
 }
 
-async function sendWhatsAppMessage(cart, address) {
-    const phone = await getWhatsAppNumber(); // Busca o número de WhatsApp do backend
-
-    if (!phone) {
-        console.error("Número do WhatsApp não encontrado.");
-        return;
-    }
-
-    // Monta a mensagem com os itens do carrinho
+function sendWhatsAppMessage(cart, address, phone) {
     let message = "🍔 *Pedido DevBurguer* 🍔%0A%0A";
     cart.forEach(item => {
         message += `• ${item.quantity}x ${item.name} - R$${item.price.toFixed(2)}%0A`;
@@ -173,7 +165,7 @@ async function sendWhatsAppMessage(cart, address) {
     message += `%0A📍 *Endereço de entrega:* ${address}`;
     message += "%0A%0AObrigado pelo pedido! 🚀";
 
-    // Cria a URL do WhatsApp com o número e a mensagem formatada
+    // Cria a URL do WhatsApp
     const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
 
     // Redireciona para o WhatsApp
@@ -192,9 +184,7 @@ checkoutBtn.addEventListener("click", async function () {
             gravity: "top",
             position: "right",
             stopOnFocus: true,
-            style: {
-                background: "#ef4444",
-            },
+            style: { background: "#ef4444" },
         }).showToast();
         return;
     }
@@ -207,9 +197,25 @@ checkoutBtn.addEventListener("click", async function () {
         return;
     }
 
-    // Nova função para enviar o pedido ao WhatsApp
-    await sendWhatsAppMessage(cart, adressInput.value);
+    // Obtém o número do WhatsApp antes de prosseguir
+    const phone = await getWhatsAppNumber();
+    if (!phone) {
+        Toastify({
+            text: "Erro ao obter número do WhatsApp!",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: { background: "#ef4444" },
+        }).showToast();
+        return;
+    }
 
+    // Envia a mensagem via WhatsApp
+    sendWhatsAppMessage(cart, adressInput.value, phone);
+
+    // Agora sim, limpa o carrinho
     cart = [];
     updateCartModal();
 });
