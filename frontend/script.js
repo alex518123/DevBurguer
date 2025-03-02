@@ -144,6 +144,19 @@ adressInput.addEventListener("input", function(event) {
     }
 })  
 
+
+async function getWhatsAppNumber() {
+    try {
+        const response = await fetch("https://devburguer.onrender.com//api/whatsapp");
+        const data = await response.json();
+        return data.phone;
+    } catch (error) {
+        console.error("Erro ao buscar número do WhatsApp:", error);
+        return null;
+    }
+}
+
+
 // Finalizar pedido
 checkoutBtn.addEventListener("click", async function () {
     const isOpen = checkRestaurantOpen();
