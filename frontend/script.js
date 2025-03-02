@@ -157,20 +157,27 @@ async function getWhatsAppNumber() {
 }
 
 function sendWhatsAppMessage(cart, address, phone) {
-    let message = "🍔 *Pedido DevBurguer* 🍔%0A%0A";
+    let message = "*🍔 PEDIDO CONFIRMADO - DEV BURGUER 🍔*%0A";
+    message += "----------------------------------%0A";
+    
     cart.forEach(item => {
-        message += `• ${item.quantity}x ${item.name} - R$${item.price.toFixed(2)}%0A`;
+        message += `🍽️ *${item.quantity}x* ${item.name} - *R$${item.price.toFixed(2)}*%0A`;
     });
 
-    message += `%0A📍 *Endereço de entrega:* ${address}`;
-    message += "%0A%0AObrigado pelo pedido! 🚀";
+    message += "----------------------------------%0A";
+    
+    // Calcula o total do pedido
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    message += `💰 *Total: R$${total.toFixed(2)}*%0A%0A`;
 
-    // Cria a URL do WhatsApp
+    message += `📍 *Endereço de entrega:* ${address}%0A%0A`;
+    message += "🛵 Seu pedido está sendo preparado! Obrigado por escolher o *Dev Burguer* 🚀🍔";
+
+    // Criar e abrir a URL do WhatsApp
     const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
-
-    // Redireciona para o WhatsApp
     window.open(whatsappUrl, "_blank");
 }
+
 
 // Finalizar pedido
 checkoutBtn.addEventListener("click", async function () {
