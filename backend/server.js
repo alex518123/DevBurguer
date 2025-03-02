@@ -1,13 +1,17 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 app.use(cors());
 
-// Rota principal para indicar que o backend está funcionando
+// Servir arquivos estáticos do frontend
+app.use(express.static(path.join(__dirname, "public")));
+
+// Rota principal para carregar o frontend
 app.get("/", (req, res) => {
-    res.send("API do DevBurguer está rodando! 🚀");
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Rota que retorna o número do WhatsApp
