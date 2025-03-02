@@ -157,7 +157,7 @@ async function getWhatsAppNumber() {
 }
 
 function sendWhatsAppMessage(cart, address, phone) {
-    let message = "*🍔 PEDIDO CONFIRMADO - DEV BURGUER 🍔*%0A";
+    let message = "*🍔 PEDIDO CONFIRMADO - DEVBURGUER 🍔*%0A";
     message += "----------------------------------%0A";
     
     cart.forEach(item => {
@@ -171,7 +171,7 @@ function sendWhatsAppMessage(cart, address, phone) {
     message += `💰 *Total: R$${total.toFixed(2)}*%0A%0A`;
 
     message += `📍 *Endereço de entrega:* ${address}%0A%0A`;
-    message += "🛵 Seu pedido está sendo preparado! Obrigado por escolher o *Dev Burguer* 🚀🍔";
+    message += "🛵 Seu pedido está sendo preparado! Obrigado por escolher o *DevBurguer* 🚀🍔";
 
     // Criar e abrir a URL do WhatsApp
     const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
