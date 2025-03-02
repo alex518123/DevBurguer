@@ -1,6 +1,8 @@
 # 🍔 DevBurguer
 
-O DevBurguer é um site de hamburgueria online onde os clientes podem visualizar o cardápio, adicionar itens ao carrinho e finalizar o pedido via WhatsApp. Criado com tecnologias modernas, o projeto tem um design responsivo e dinâmico para proporcionar a melhor experiência ao usuário. 
+O DevBurguer é uma aplicação web moderna e responsiva que simula o funcionamento de uma hamburgueria online, permitindo que os clientes visualizem o cardápio, adicionem itens ao carrinho e finalizem seus pedidos via WhatsApp. Desenvolvido com HTML, CSS, JavaScript puro e Tailwind CSS no front-end, e Node.js com Express no back-end, o projeto proporciona uma experiência intuitiva e eficiente.
+
+Com funcionalidades como cálculo dinâmico do total do pedido, verificação automática do horário de funcionamento do restaurante e um fluxo simplificado para finalização via WhatsApp, o DevBurguer combina desempenho e praticidade. Sua interface moderna e otimizada garante acessibilidade em diferentes dispositivos, tornando a navegação rápida e agradável. Além disso, a implementação segura de variáveis de ambiente no servidor reforça a proteção dos dados sensíveis.
 
 ### 🔗 Acesse o projeto: [DevBurguer](https://devburguer.onrender.com/)
 
