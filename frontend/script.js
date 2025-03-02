@@ -156,6 +156,29 @@ async function getWhatsAppNumber() {
     }
 }
 
+async function sendWhatsAppMessage(cart, address) {
+    const phone = await getWhatsAppNumber(); // Busca o número de WhatsApp do backend
+
+    if (!phone) {
+        console.error("Número do WhatsApp não encontrado.");
+        return;
+    }
+
+    // Monta a mensagem com os itens do carrinho
+    let message = "🍔 *Pedido DevBurguer* 🍔%0A%0A";
+    cart.forEach(item => {
+        message += `• ${item.quantity}x ${item.name} - R$${item.price.toFixed(2)}%0A`;
+    });
+
+    message += `%0A📍 *Endereço de entrega:* ${address}`;
+    message += "%0A%0AObrigado pelo pedido! 🚀";
+
+    // Cria a URL do WhatsApp com o número e a mensagem formatada
+    const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+
+    // Redireciona para o WhatsApp
+    window.open(whatsappUrl, "_blank");
+}
 
 // Finalizar pedido
 checkoutBtn.addEventListener("click", async function () {
