@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- META TAG OG -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Dev Burguer - O melhor hamburguer dev!" />
+        <meta property="og:image" content="https://devburguer.com.br/imagem.jpg" />
+        <meta property="og:description" content="O melhor hambúrguer da região" />
+        <meta property="og:site_name" content="DevBurguer" />
+
+    <link href="./styles/output.css" rel="stylesheet">
+    <title>DevBurguer</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header class="w-full h-[420px] bg-zinc-900 bg-cover bg-center" style="background-image: url('./assets/bg.png');">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <img 
+                src="./assets/DevBurguer.png" 
+                alt="logo" 
+                class="max-w-[250px] max-h-[250px] rounded-full shadow-lg hover:scale-110 duration-200"
+            />
+            <h1 class="text-3xl mt-4 mb-2 font-bold text-[#FAF3E0]">
+                DevBurguer
+            </h1>
+
+            <span class="text-[#FAF3E0] font-medium">
+                221B Baker Street, Londres
+            </span>
+
+            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+                <span class="text-white font-medium">
+                    De segunda a domingo - 18:00 às 22:00
+                </span>
+
+        </div>
+    </header>
+
+
+
+
+    <!-- FIM DO HEADER -->
+
+    <h2 id="menuTitle" class="text-3xl md:text-4xl text-center mt-12 mb-10 font-extrabold"></h2>
+    
+    
+
+    <!-- MENU -->
+
+    <div id="menu">
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mx-auto max-w-7xl px-2 mb-16">
+
+            <!-- PRODUTO ITEM 1 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-1.png"
+                    alt="Code Smash"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        Code Smash
+                    </p>
+                    <p class="text-sm">
+                        Simples, direto e sem bugs! Smash burguer 160g, queijo prato derretido, cebola roxa e maionese especial da casa.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 18,90
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Code Smash"
+                            data-price="18.90"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM PRODUTO ITEM -->
+
+            <!-- PRODUTO ITEM 2 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-2.png"
+                    alt="Bugless Beast"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        Bugless Beast
+                    </p>
+                    <p class="text-sm">
+                        Feito para quem quer potência! Dois smash burguers de 160g, cheddar duplo, bacon crocante e molho barbecue artesanal.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 32,90
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Bugless Beast"
+                            data-price="32.90"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM PRODUTO ITEM 2 -->
+
+            <!-- PRODUTO ITEM 3 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-3.png"
+                    alt="Green Commit"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        Green Commit
+                    </p>
+                    <p class="text-sm">
+                        Para os devs que querem um push saudável! Hambúrguer 160g, alface americana, tomate, queijo suíço e um toque de maionese verde especial.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 35,90
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Green Commit"
+                            data-price="35.90"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM PRODUTO ITEM 3 -->
+
+            <!-- PRODUTO ITEM 4 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-4.png"
+                    alt="The Main Branch"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        The Main Branch
+                    </p>
+                    <p class="text-sm">
+                        O carro-chefe da casa! Blend secreto de carnes, queijo prato, cebola caramelizada e molho especial, tudo no pão brioche macio.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 30,00
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="The Main Branch"
+                            data-price="30.00"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM PRODUTO ITEM 4 -->
+
+            <!-- PRODUTO ITEM 5 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-5.png"
+                    alt="Dev Bacon Supreme"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        Dev Bacon Supreme
+                    </p>
+                    <p class="text-sm">
+                        Um hambúrguer robusto com 180g de carne suculenta, bacon crocante, cheddar derretido e um toque especial de molho barbecue artesanal.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 35,90
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Dev Bacon Supreme"
+                            data-price="35.90"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM PRODUTO ITEM 5 -->
+
+            <!-- PRODUTO ITEM 6 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-6.png"
+                    alt="Stack Overflow Burger"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        Stack Overflow Burger
+                    </p>
+                    <p class="text-sm">
+                        Para quem quer um hambúrguer cheio de camadas! Dois smash burgers de 120g, queijo prato, cebola caramelizada e um molho secreto que vai explodir seu paladar.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 38,90
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Stack Overflow Burger"
+                            data-price="38.90"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM PRODUTO ITEM 6 -->
+
+            <!-- PRODUTO ITEM 7 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-7.png"
+                    alt="Full Stack Burger"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        Full Stack Burger
+                    </p>
+                    <p class="text-sm">
+                        Um verdadeiro monstro do desenvolvimento! 200g de carne, queijo cheddar duplo, alface americana crocante, tomate e maionese temperada.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 42,90
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Full Stack Burger"
+                            data-price="42.90"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM PRODUTO ITEM 7 -->
+
+            <!-- PRODUTO ITEM 8 -->
+            <div class="flex gap-4">
+                <img
+                    src="./assets/hamb-8.png"
+                    alt="Debugger Delight"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div>
+                    <p class="font-bold">
+                        Debugger Delight
+                    </p>
+                    <p class="text-sm">
+                        Se algo der errado, esse burger corrige tudo! Blend especial de carnes, queijo gorgonzola, rúcula fresca e cebola crispy para um toque irresistível.
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 36,90
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Debugger Delight"
+                            data-price="36.90"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM PRODUTO ITEM 8 -->
+
+
+        </main>
+
+        <div class="mx-auto max-w-7xl px-2 my-2 text-center">
+            <h2 class="font-bold text-3xl mb-6">
+                Bebidas
+            </h2>
+        </div>
+
+        <!-- GRID BEBIDAS -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mx-auto max-w-7xl px-2 mb-16" id="menu">
+            <!-- BEBIDA ITEM 1 -->
+            <div class="flex gap-4 w-full">
+                <img
+                    src="./assets/refri-1.png"
+                    alt="Coca lata"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div class="w-full">
+                    <p class="font-bold">
+                        Coca lata
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 6,00
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Coca lata"
+                            data-price="6.00"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM BEBIDA ITEM 1 --> 
+             
+            <!-- BEBIDA ITEM 2 -->
+            <div class="flex gap-4 w-full">
+                <img
+                    src="./assets/refri-2.png"
+                    alt="Guaraná lata"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+                />
+
+                <div class="w-full">
+                    <p class="font-bold">
+                        Guaraná lata
+                    </p>
+
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <p class="font-bold text-lg">
+                            R$ 6,00
+                        </p>
+                        <button 
+                            class="bg-gray-900 px-5 rounded add-to-cart-btn transition-transform duration-200 ease-in-out hover:bg-red-500 hover:scale-110 active:scale-90"
+                            data-name="Guaraná lata"
+                            data-price="6.00"
+                        >
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- FIM BEBIDA ITEM 2 -->  
+
+
+        </div>
+
+
+        <!-- FIM GRID BEBIDAS -->
+
+
+    </div>
+    <!-- FIM DO MENU -->
+
+    <!-- MODAL CART -->
+
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+        id="cart-modal">
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+            <h2 class="text-center font-bold text-2xl mb-4">Meu carrinho</h2>
+
+            <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
+            <p class="font-bold"> Total: <span id="cart-total">0.00</span></p>
+
+            <p class="font-bold mt-4"> Endereço de entrega:</p>
+
+            <input
+                type="text"
+                placeholder="Digite seu endereço completo..."
+                id="adress"
+                class="w-full border-2 p-1 rounded my-1"
+            />
+
+            <p class="text-red-500 hidden" id="adress-warn">Digite seu endereço completo!</p>
+
+            <div class="flex- items-center justify-between mt-5 w-full">
+                <button id="close-modal-btn">Fechar</button>
+                <button id="checkout-btn" class="bg-green-500 px-4 py-1 rounded text-white">Finalizar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- FIM MODAL CART -->
+
+
+    <!-- BUTTON CART FOOTER -->
+
+    <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
+        <button 
+            class="flex items-center gap-2 text-white font-bold"
+            id="cart-btn"
+        >
+            (<span id="cart-count">0</span>)
+            Veja seu carrinho
+            <i class="fa fa-shopping-cart text-lg text-white"></i>
+        </button>
+        
+    </footer>
+
+
+
+    <!-- FIM BUTTON CART FOOTER -->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
+
+    
+</body>
+
+
+
+
+</html>
