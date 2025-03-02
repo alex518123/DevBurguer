@@ -7,11 +7,11 @@ const app = express();
 app.use(cors());
 
 // Servir arquivos estáticos do frontend
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 // Rota principal para carregar o frontend
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "../frontend", "index.html"));
 });
 
 // Rota que retorna o número do WhatsApp
