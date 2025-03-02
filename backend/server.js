@@ -16,7 +16,14 @@ app.get("/", (req, res) => {
 
 // Rota que retorna o número do WhatsApp
 app.get("/api/whatsapp", (req, res) => {
-    res.json({ phone: process.env.WHATSAPP_NUMBER });
+    const phone = process.env.WHATSAPP_NUMBER;
+
+    if (!phone) {
+        console.error("Erro: Número do WhatsApp não foi definido no .env");
+        return res.status(500).json({ error: "Número de WhatsApp não configurado" });
+    }
+
+    res.json({ phone });
 });
 
 const PORT = process.env.PORT || 3000;
