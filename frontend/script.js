@@ -147,7 +147,7 @@ adressInput.addEventListener("input", function(event) {
 
 async function getWhatsAppNumber() {
     try {
-        const response = await fetch("https://devburguer.onrender.com//api/whatsapp");
+        const response = await fetch("https://devburguer.onrender.com/api/whatsapp");
         const data = await response.json();
         return data.phone;
     } catch (error) {
