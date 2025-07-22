@@ -65,9 +65,9 @@ DevBurguer/
 
 ➊ Clone o repositório e acesse o diretório do back-end:
 ```
-git clone https://github.com/alex518123/weather-app.git
+git clone https://github.com/alex518123/DevBurguer.git
 
-cd weather-app/weather-backend
+cd DevBurguer/backend
 ```
 
 ➋ Instale as dependências:
